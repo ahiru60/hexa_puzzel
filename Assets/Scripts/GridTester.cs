@@ -4,16 +4,17 @@ using UnityEngine;
 using NaughtyAttributes;
 
 public class GridTester : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+{
+    [Header(" Elements ")]
+    [SerializeField] private Grid grid;
+    [Header(" Settings ")]
+    [OnValueChanged("UpdateGridPos")]
+    [SerializeField] private Vector3Int gridPos;
+    // Start is called before the first frame update
+    private void UpdateGridPos()
     {
-        
+        transform.position = grid.CellToWorld(gridPos);
     }
 }
