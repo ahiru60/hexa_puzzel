@@ -10,7 +10,7 @@ public class StackSpawner : MonoBehaviour
     [SerializeField] private Transform stackPositionParent;
     [SerializeField] private Hexagon hexagon;
     [SerializeField] private float hexagonHeight;
-    [SerializeField] private GameObject hexagonStackPrefab;
+    [SerializeField] private HexStack hexagonStack;
 
 
     [Header(" Settings ")]
@@ -33,7 +33,7 @@ public class StackSpawner : MonoBehaviour
 
     private void GenerateStack(Transform parent)
     {
-        GameObject hexStack = Instantiate(hexagonStackPrefab, parent.position,Quaternion.identity,parent);
+        HexStack hexStack = Instantiate(hexagonStack, parent.position,Quaternion.identity,parent);
         hexStack.name = $"Stack {parent.GetSiblingIndex()}";
 
         Color stackColor = colors[Random.Range(0,colors.Length)];
@@ -50,6 +50,8 @@ public class StackSpawner : MonoBehaviour
             Vector3 spawnPosition = hexStack.transform.TransformPoint(hexagonLocalPos);
             Hexagon hexagonInstance = Instantiate(hexagon, spawnPosition, Quaternion.identity, hexStack.transform);
             hexagonInstance.Color = i < firstColorHexagonCount ? colorArray[0] : colorArray[1];
+            hexagonInstance.Configure(hexStack);
+            hexStack.Add(hexagonInstance);
 
         }
     }

@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 389949833117627653}
   - component: {fileID: 5570342982541019861}
   - component: {fileID: 3593845444439025287}
-  m_Layer: 0
+  - component: {fileID: -4047568632805796543}
+  - component: {fileID: 2086864902530305872}
+  m_Layer: 9
   m_Name: Grid Hex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +85,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-4047568632805796543
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683700155120323530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2124705421725058983, guid: e6e96894d32b23a4f8c80b95a4667c87, type: 3}
+--- !u!114 &2086864902530305872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683700155120323530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7e1c159985a1942b3b9038fdca0267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
