@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GridHexagonCell : MonoBehaviour
 {
-    private HexStack stack;
+    public HexStack stack { get; private set; }
     public bool isOccupied
     {
         get => stack != null;
         private set { }
     }
+
 
     public void AssignStack(HexStack stack)
     {

@@ -18,6 +18,10 @@ public class StackController : MonoBehaviour
     [Header(" Data ")]
     private GridHexagonCell targetCell;
 
+
+    [Header(" Actions ")]
+    public static Action<GridHexagonCell> onStackPlaced;
+
     // Start is called before the first frame update
     
 
@@ -66,11 +70,13 @@ public class StackController : MonoBehaviour
             return;
         }
 
-        currentHexStack.transform.position = targetCell.transform.position.With(y: 0);
+        currentHexStack.transform.position = targetCell.transform.position.With(y: .2f);
         currentHexStack.transform.SetParent(targetCell.transform);
         currentHexStack.place();
 
         targetCell.AssignStack(currentHexStack);
+
+        onStackPlaced?.Invoke(targetCell);
 
         targetCell = null;
         currentHexStack = null;
